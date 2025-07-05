@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Ionah</title>
+  <style>
+    
+    
+/* ...existing code... */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Responsive Barbie pink gradient, Barbie figure, and sparkles overlay */
+  background:
+    linear-gradient(135deg, #ffb6e6 0%, #e96aff 100%),
+    url('https://www.kindpng.com/picc/m/100-1007806_for-mobile-photo-barbie-and-the-secret-door.png') center 45% no-repeat,
+    url('https://www.kindpng.com/picc/m/100-1007806_for-mobile-photo-barbie-and-the-secret-door.png');
+  background-size: cover, min(60vw, 340px) auto, 180px;
+  background-blend-mode: normal, lighten, lighten;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-attachment: fixed, fixed, fixed;
+  overflow: hidden;
+}
+
+    h1 {
+      color: #70098f;
+      text-shadow: 1px 1px #fff;
+      margin-bottom: 60px;
+      font-size: 1.9rem;
+    }
+
+  .cake {
+  position: relative;
+  width: 200px;
+  height: 160px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+  z-index: 2;
+}
+
+.cake-plate {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 20px;
+  background: #8a02d8;
+  border-radius: 50% 50% 60% 60%/60% 60% 100% 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  z-index: 0;
+  border: 2px solid #d1bfcf;
+}
+
+.layer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-radius: 18px 18px 12px 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.09);
+}
+
+.layer.bottom {
+  bottom: 0;
+  height: 54px;
+  background: linear-gradient(180deg, #7b3f00 80%, #4e260e 100%);
+  z-index: 2;
+}
+
+.layer.middle {
+  bottom: 54px;
+  height: 38px;
+  background: linear-gradient(180deg, #a0522d 80%, #7b3f00 100%);
+  z-index: 3;
+}
+
+.layer.top {
+  bottom: 92px;
+  height: 28px;
+  background: linear-gradient(180deg, #d2691e 80%, #a0522d 100%);
+  z-index: 4;
+}
+.candle {
+  position: absolute;
+  bottom: 130px;
+  width: 24px;
+  height: 40px;
+  background: transparent;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.candle-1 {
+  left: 75px;
+}
+.candle-7 {
+  left: 105px;
+}
+
+.candle .number {
+  font-family: 'Comic Sans MS', 'Segoe Script', cursive, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fffacd;
+  text-shadow: 0 0 6px #a0522d, 0 2px 0 #d2691e;
+  background: linear-gradient(180deg, #fffacd 60%, #ffe4b5 100%);
+  border-radius: 6px;
+  padding: 0 6px;
+  margin-top: 8px;
+  box-shadow: 0 2px 6px #0002;
+  border: 2px solid #d2691e;
+}
+
+.candle .flame {
+  position: absolute;
+  top: -14px;
+  left: 35%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 16px;
+  background: radial-gradient(circle, #ffd700 60%, #ff4500 100%);
+  border-radius: 50% 50% 60% 60%;
+  animation: flicker 1s infinite alternate;
+  box-shadow: 0 0 12px 4px #ffd70088;
+  z-index: 2;
+}
+
+@keyframes flicker {
+  0% { transform: scale(1) rotate(-2deg); }
+  100% { transform: scale(1.2) rotate(2deg); }
+}
+
+    .cake:hover {
+      transform: scale(1.05);
+    }
+
+
+   .letter {
+  display: none;
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background:
+    linear-gradient(135deg, #ffb6e680 0%, #fff0fa80 100%),
+    url('https://pngimg.com/d/barbie_PNG34.png') center center no-repeat;
+  background-size: cover, 180px;
+  background-position: center, center;
+  border: 4px solid #ff69b4;
+  border-radius: 30px 30px 40px 40px/40px 40px 60px 60px;
+  box-shadow: 0 0 30px 8px #ffb6e6cc, 0 0 20px rgba(0,0,0,0.12);
+  font-family: 'Comic Sans MS', 'Segoe Script', sans-serif;
+  padding: 25px;
+  max-width: 90%;
+  width: 500px;
+  height: 70vh;
+  overflow-y: auto;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(.4,2,.6,1), transform 0.4s cubic-bezier(.4,2,.6,1);
+}
+
+.letter.show {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+    .letter p {
+      white-space: pre-wrap;
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .close-btn {
+      margin-top: 15px;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    
+.barbie-img {
+  display: block;
+  margin: 0 auto 18px auto;
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 6px 18px #ffb6e6cc);
+  user-select: none;
+  pointer-events: none;
+}
+
+.hide {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.4s;
+}
+  </style>
+</head>
+<body>
+
+  <h1 id="mainTitle">Happy Birthday, Ionah!🎉</h1>
+ <div class="cake" id="cake" onclick="showLetter()">
+  <div class="cake-plate"></div>
+  <div class="layer bottom">
+   
+  </div>
+  <div class="layer middle">
+   
+  </div>
+  <div class="layer top">
+   
+  </div>
+ <div class="candle candle-1">
+  <div class="flame"></div>
+  <div class="number">1</div>
+</div>
+<div class="candle candle-7">
+  <div class="flame"></div>
+  <div class="number">7</div>
+</div>
+    <div class="flame"></div>
+  </div>
+</div>
+
+  <div class="letter" id="letter">
+  
+<p id="letterText">
+Hi, gandaaa. It’s finally here — your birthday!
+(But technically… our birthday. 😝)
+
+Before you go off and celebrate, I hope you take a moment to read this letter.
+
+Happy Birthday to the most beautiful girl I know — inside and out.
+All I can say is that you did great… no, not just great — you did your best this past year. And that alone makes me proud of you.
+
+I’ve seen how much you’ve grown, even in ways you don’t notice.
+I wish for you to become even stronger, to be better than who you were yesterday, and to keep going — even when things get tough.
+Because I believe in you. Always.
+
+I just want you to enjoy your day... stress-free and full of laughter and happiness.
+And I want you to know how much I love you.
+This letter is just a small gift for your truly special day. I really hope you’ll love it.
+I know it’s not much, but let me tell you... one day, when I can, I’ll give you something even more special — maybe even those handmade flowers you truly deserve.
+I know this isn’t the best gift you’ll receive,
+But I assure you — it’s the purest one you ever will.
+
+I still can’t believe we reached this point — celebrating our birthday together.
+And if you’re ever wondering what gift to give me...
+Your presence is more than enough to make me happy on our special day.
+
+I wish for you to always be well —
+To be healthy and strong.
+So strong that even negative thoughts would say,
+“I can’t get through her mind.”
+
+I have no other wish but for you to succeed.
+And honestly, I don’t usually pray for anything —
+But for you, I always will.
+Not for myself... but for you.
+Because without you, I feel like I’m nothing.
+
+You’re the reason I strive to be better.
+You’re the reason I study harder.
+You’re the reason I keep fighting —
+Even on days I feel like giving up.
+
+I'm really happy that we've come to this point where we're no longer afraid to open up to each other.
+You have no idea how much I’ve grown since you gave me the chance to prove my love to you.
+
+Maybe sometimes, you wonder if I’m just good at first — like the others you’ve met.
+But let me assure you: you don’t have to think that way anymore.
+
+I won’t make promises — because I know how much you hate them.
+Instead, I’m here to prove to you that <strong>real and unconditional love exists.</strong>
+It exists in the real world — just like in the movies you love.
+It’s not perfect, but it’s sincere, and always open to growth.
+
+And lastly, I wish for both of us to be happy — and to keep improving.
+I’m always here for you. <strong>To be your kakampi sa lahat.</strong>
+No matter where you are, I’m always sending you my full love and support.
+
+I’m also here to give you the father figure you’ve always needed —
+Because I know how deeply you’ve craved the validation you didn’t get when you were young.
+
+I may not be the best at giving gifts.
+I may not be able to give you the things you love, or anything fancy.
+But I hope this letter is enough to put a smile on your face.
+
+<strong>Happy Birthday, and I love you always — Ionah Chris Andoy.</strong>
+— Epi Louis Badilla
+
+    </p>
+    <button class="close-btn" onclick="hideLetter()">Close</button>
+  </div>
+<audio id="bgMusic" src="BG.mp3" loop></audio>
+ <script>
+ 
+const fullLetter = `Hi, gandaaa. It’s finally here — your birthday!
+(But technically… our birthday. 😝)
+
+Before you go off and celebrate, I hope you take a moment to read this letter.
+
+Happy Birthday to the most beautiful girl I know — inside and out.
+All I can say is that you did great… no, not just great — you did your best this past year. And that alone makes me proud of you.
+
+I’ve seen how much you’ve grown, even in ways you don’t notice.
+I wish for you to become even stronger, to be better than who you were yesterday, and to keep going — even when things get tough.
+Because I believe in you. Always.
+
+I just want you to enjoy your day... stress-free and full of laughter and happiness.
+And I want you to know how much I love you.
+This letter is just a small gift for your truly special day. I really hope you’ll love it.
+I know it’s not much, but I promise — one day, when I can, I’ll give you something even more special. Maybe even those handmade flowers you deserve.
+
+I know this isn’t the best gift you’ll receive,
+But I assure you — it’s the purest one you ever will.
+
+I still can’t believe we reached this point — celebrating our birthday together.
+And if you’re ever wondering what gift to give me...
+Your presence is more than enough to make me happy on our special day.
+
+I wish for you to always be well —
+To be healthy and strong.
+So strong that even negative thoughts would say,
+“I can’t get through her mind.”
+
+I have no other wish but for you to succeed.
+And honestly, I don’t usually pray for anything —
+But for you, I always will.
+Not for myself... but for you.
+Because without you, I feel like I’m nothing.
+
+You’re the reason I strive to be better.
+You’re the reason I study harder.
+You’re the reason I keep fighting —
+Even on days I feel like giving up.
+
+I'm really happy that we've come to this point where we're no longer afraid to open up to each other.
+You have no idea how much I’ve grown since you gave me the chance to prove my love to you.
+
+Maybe sometimes, you wonder if I’m just good at first — like the others you’ve met.
+But let me assure you: you don’t have to think that way anymore.
+
+I won’t make promises — because I know how much you hate them.
+Instead, I’m here to prove to you that <strong>real and unconditional love exists.</strong>
+It exists in the real world — just like in the movies you love.
+It’s not perfect, but it’s sincere, and always open to growth.
+
+And lastly, I wish for both of us to be happy — and to keep improving.
+I’m always here for you. <strong>To be your kakampi sa lahat.</strong>
+No matter where you are, I’m always sending you my full love and support.
+
+I’m also here to give you the father figure you’ve always needed —
+Because I know how deeply you’ve craved the validation you didn’t get when you were young.
+
+I may not be the best at giving gifts.
+I may not be able to give you the things you love, or anything fancy.
+But I hope this letter is enough to put a smile on your face.
+
+<strong>Happy Birthday, and I love you always — Ionah Chris Andoy.</strong>
+— Epi Louis Badilla
+
+`;
+
+let typingInterval;
+function showLetter() {
+  const letter = document.getElementById("letter");
+  const letterText = document.getElementById("letterText");
+  document.getElementById("cake").classList.add("hide");
+  document.getElementById("mainTitle").classList.add("hide");
+  letterText.innerHTML = ""; // Clear previous text
+  letter.style.display = "block";
+  setTimeout(() => letter.classList.add("show"), 10);
+
+  // Typing animation
+  let i = 0;
+  clearInterval(typingInterval);
+  typingInterval = setInterval(() => {
+    letterText.innerHTML = fullLetter.slice(0, i).replace(/\n/g, "<br>");
+    i++;
+    if (i > fullLetter.length) clearInterval(typingInterval);
+  }, 15);
+
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.1;
+  music.play();
+}
+
+function hideLetter() {
+  const letter = document.getElementById("letter");
+  letter.classList.remove("show");
+  setTimeout(() => {
+    letter.style.display = "none";
+    clearInterval(typingInterval);
+    document.getElementById("cake").classList.remove("hide");
+    document.getElementById("mainTitle").classList.remove("hide");
+  }, 400);
+  document.getElementById("bgMusic").pause();
+}
+</script>
+
+</body>
+</html>
