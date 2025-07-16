@@ -319,7 +319,18 @@ function showLetter() {
   music.volume = 0.2;
   music.play();
 }
-
+function hideLetter() {
+  const letter = document.getElementById("letter");
+  const footer = document.querySelector(".letter-footer");
+  letter.classList.remove("show");
+  setTimeout(() => {
+    letter.style.display = "none";
+    document.getElementById("cake").classList.remove("hide");
+    document.getElementById("mainTitle").classList.remove("hide");
+    footer.style.display = "none";
+  }, 400); // matches your transition
+  document.getElementById("bgMusic").pause();
+}
 </script>
 
 </body>
